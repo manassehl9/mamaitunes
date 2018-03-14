@@ -17,8 +17,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::group(['middleware'=>'auth', 'namespace'=>'Dashboard'], function(){
     Route::get('/dashboard/admin', 'AdminController@index')->name('dashboard.admin');
 });
