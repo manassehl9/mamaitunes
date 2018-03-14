@@ -7,16 +7,16 @@
     </div>
     <div class="sidebar-wrapper">
         <ul class="nav">
-            <li class="active">
-                <a href="dashboard.html">
+            <li class="{{Request::is('dashboard/admin*') ? 'active': ''}}">
+                <a href="{{ route('dashboard.admin') }}">
                     <i class="material-icons">dashboard</i>
                     <p>Dashboard</p>
                 </a>
             </li>
-            <li>
-                <a href="./user.html">
-                    <i class="material-icons">person</i>
-                    <p>User Profile</p>
+            <li class="{{Request::is('dashboard/slider*') ? 'active': ''}}">
+                <a href="{{ route('slider.index') }}">
+                    <i class="material-icons">Slideshow</i>
+                    <p>Slider</p>
                 </a>
             </li>
             <li>

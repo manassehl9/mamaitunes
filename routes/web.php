@@ -18,5 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(['middleware'=>'auth', 'namespace'=>'Dashboard'], function(){
-    Route::get('/dashboard/admin', 'AdminController@index')->name('dashboard.admin');
+    Route::get('dashboard/admin', 'AdminController@index')->name('dashboard.admin');
+    Route::get('dashboard/slider', 'SliderController@index')->name('slider.index');
 });
