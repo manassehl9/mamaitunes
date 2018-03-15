@@ -17,7 +17,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//Redirect to the Login if not signed in
 Route::group(['middleware'=>'auth', 'namespace'=>'Dashboard'], function(){
     Route::get('dashboard/admin', 'AdminController@index')->name('dashboard.admin');
-    Route::get('dashboard/slider', 'SliderController@index')->name('slider.index');
+    Route::resource('dashboard/slider', 'SliderController');
 });

@@ -26,7 +26,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.slider.create');
     }
 
     /**
@@ -37,7 +37,7 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('dashboard.slider.store');
     }
 
     /**
