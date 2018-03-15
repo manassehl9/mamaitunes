@@ -12,14 +12,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <a href="{{ route('slider.create') }}" class="btn btn-info">Add New</a>
-                @if(session('successMsg'))
-                    <div class="alert alert-success">
-                            <button type="button" aria-hidden="true" class="close"
-                            onclick="this.parentElement.style.display='none';">x</button>
-                            <span><b>Success - </b>{{ session('successMsg')}}</span>
-                    </div>
-                @endif
+                <a href="{{ route('slider.create') }}" class="btn btn-primary">Add New</a>
+                @include('layouts.partial.msg')
                 <div class="card">
                     <div class="card-header" data-background-color="purple">
                         <h4 class="title">All Slider</h4>
@@ -34,6 +28,7 @@
                                 <th>Image</th>
                                 <th>Created At</th>
                                 <th>Updated At</th>
+                                <th>Action</th>
                             </thead>
                             <tbody>
                                 @foreach($sliders as $key=>$slider)
@@ -44,6 +39,27 @@
                                     <td>{{ $slider->image }}</td>
                                     <td>{{ $slider->created_at }}</td>
                                     <td>{{ $slider->updated_at }}</td>
+                                    <td>
+                                        <a href="{{ route('slider.edit', $slider->id) }}" class="btn btn-info btn-sm">
+                                            <i class="material-icons">mode_edit</i>
+                                        </a>
+                                        <form id="delete-form-{{$slider->id}}"
+                                             action="{{ route('slider.destroy', $slider->id) }}"
+                                             style="display: none;" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                        </form>
+                                        <button type="button" class="btn btn-danger btn-sm"
+                                            onclick="if(confirm('Are you sure? You want to delet this?')){
+                                                event.preventDefault();
+                                                document.getElementById('delete-form-{{$slider->id}}').submit();
+                                            }else{
+                                                event.preventDefault();
+                                            }">
+                                            <i class="material-icons">delete</i>
+                                        </button>
+                                        
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
