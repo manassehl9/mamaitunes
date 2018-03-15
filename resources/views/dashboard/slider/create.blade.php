@@ -12,6 +12,15 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
+                @if($errors->any())
+                    @foreach($errors->all() as $error)
+                        <div class="alert alert-danger">
+                            <button type="button" aria-hidden="true" class="close"
+                            onclick="this.parentElement.style.display='none';">x</button>
+                            <span><b>Danger - </b>{{ $error}}</span>
+                        </div>
+                    @endforeach
+                @endif
                 <div class="card">
                     <div class="card-header" data-background-color="purple">
                         <h4 class="title">Add New Slider</h4>
