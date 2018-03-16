@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="{{ asset('frontend/css/flexslider.css') }}">
         <link rel="stylesheet" href="{{ asset('frontend/css/pricing.css') }}">
         <link rel="stylesheet" href="{{ asset('frontend/css/main.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap-datetimepicker.min.css') }}">
         <style>
             @foreach($sliders as $key=>$slider)
            
@@ -632,7 +633,7 @@
 
         <!--== 15. Reserve A Table! ==-->
         <section id="reserve" class="reserve">
-            <img class="img-responsive section-icon hidden-sm hidden-xs" src="images/icons/reserve_black.png">
+            <img class="img-responsive section-icon hidden-sm hidden-xs" src="{{asset('frontend/images/icons/reserve_black.png')}}">
             <div class="wrapper">
                 <div class="container-fluid">
                     <div class="row dis-table">
@@ -650,7 +651,7 @@
 
 
         <section class="reservation">
-            <img class="img-responsive section-icon hidden-sm hidden-xs" src="images/icons/reserve_color.png">
+            <img class="img-responsive section-icon hidden-sm hidden-xs" src="{{asset('frontend/images/icons/reserve_color.png')}}">
             <div class="wrapper">
                 <div class="container-fluid">
                     <div class=" section-content">
@@ -672,7 +673,7 @@
                                                 <input type="tel" class="form-control reserve-form empty iconified" name="phone" id="phone" required="required" placeholder="  &#xf095;  Phone">
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control reserve-form empty iconified" name="datepicker" id="datepicker" required="required" placeholder="&#xf017;  Time">
+                                                <input type="text" class="form-control reserve-form empty iconified" name="datepicker" id="datetimepicker1" required="required" placeholder="&#xf017;  Time">
                                             </div>
                                         </div>
 
@@ -817,6 +818,16 @@
         <script src="{{ asset('frontend/js/jquery.hoverdir.js') }}"></script>
         <script src="{{ asset('frontend/js/jQuery.scrollSpeed.js') }}"></script>
         <script src="{{ asset('frontend/js/script.js') }}"></script>    
-
+        <script src="{{ asset('frontend/js/bootstrap-datetimepicker.min.js') }}"></script>
+        <script>
+            $(function() {
+                $('#datetimepicker1').datetimepicker({
+                    format: "dd MM yyyy - HH::ll P",
+                    sowMeridian: true,
+                    autoclose: true,
+                    todayBtn: true
+                });
+            })
+        </script>
     </body>
 </html>
