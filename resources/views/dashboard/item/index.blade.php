@@ -36,7 +36,7 @@
                                 <tr>
                                     <td>{{ $key + 1}}</td>
                                     <td>{{ $item->name }}</td>
-                                    <td>{{ $item->image }}</td>
+                                    <td><img class="img-responsive img-thumbnail" style="height:100px; width:100px" src="{{ asset('uploads/item/'.$item->image)}}" alt=""/></td>
                                     <td>{{ $item->category->name }}</td>
                                     <td>{{ $item->description }}</td>
                                     <td>{{ $item->created_at }}</td>
