@@ -20,7 +20,7 @@
                     <div class="card-content">
                         <form method="POST" action="{{ route('slider.update', $slider->id) }} " enctype="multipart/form-data">
                             {{ csrf_field() }}
-                            @method('PUT');
+                            @method('PUT')
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group label-floating">

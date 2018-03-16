@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('welcome');
 
 Auth::routes();
 
@@ -21,4 +19,5 @@ Auth::routes();
 Route::group(['middleware'=>'auth', 'namespace'=>'Dashboard'], function(){
     Route::get('dashboard/admin', 'AdminController@index')->name('dashboard.admin');
     Route::resource('dashboard/slider', 'SliderController');
+    Route::resource('dashboard/category', 'CategoryController');
 });
