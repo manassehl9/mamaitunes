@@ -20,4 +20,5 @@ Route::group(['middleware'=>'auth', 'namespace'=>'Dashboard'], function(){
     Route::get('dashboard/admin', 'AdminController@index')->name('dashboard.admin');
     Route::resource('dashboard/slider', 'SliderController');
     Route::resource('dashboard/category', 'CategoryController');
+    Route::resource('dashboard/item', 'ItemController');
 });
