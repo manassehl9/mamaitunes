@@ -67,10 +67,11 @@
                                            
                                         @endif
                                         
-                                        <form id="delete-form-{{$reservation->id}}"
-                                            action=""
-                                                style="..." method="POST">
+                                        <form id="status-form-{{$reservation->id}}"
+                                            action="{{ route('reservation.destroy', $reservation->id )}}"
+                                                style="..." method="post">
                                             @csrf
+                                            @method('DELETE')
                                         </form>
                                         <button type="button" class="btn btn-danger btn-sm"
                                             onclick="if(confirm('Are you sure? You want to delet this?')){
