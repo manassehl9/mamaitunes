@@ -131,7 +131,7 @@ class ItemController extends Controller
             unlink('uploads/item/'.$item->image);
             $image->move('uploads/item', $imagename);
         }else{
-            $imagename = 'default.png';
+            $imagename = $item->image;
         }
 
        

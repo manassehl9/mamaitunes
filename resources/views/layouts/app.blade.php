@@ -20,6 +20,7 @@
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     @stack('css')
 </head>
 <body>
@@ -59,7 +60,9 @@
     <script src="{{asset('backend/js/material-dashboard.js?v=1.2.0') }}"></script>
     <!-- Material Dashboard DEMO methods, don't include it in your project! -->
     <script src="{{asset('backend/js/demo.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script type="text/javascript">
+    
         $(document).ready(function() {
 
             // Javascript method's body can be found in assets/js/demos.js
@@ -67,6 +70,7 @@
 
         });
     </script>
+    {!! Toastr::message() !!}
     @stack('scripts')
 </body>
 </html>

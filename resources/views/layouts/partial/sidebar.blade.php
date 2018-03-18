@@ -31,11 +31,10 @@
                     <p>Items</p>
                 </a>
             </li>
-            
-            <li>
-                <a href="./notifications.html">
-                    <i class="material-icons text-gray">notifications</i>
-                    <p>Notifications</p>
+            <li class="{{Request::is('dashboard/reservation*') ? 'active': ''}}">
+                <a href="{{ route('reservation.index') }}">
+                    <i class="material-icons">chrome_reader_mode</i>
+                    <p>Reservations</p>
                 </a>
             </li>
             <li class="active-pro">
