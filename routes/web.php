@@ -22,7 +22,12 @@ Route::group(['middleware'=>'auth', 'namespace'=>'Dashboard'], function(){
     Route::resource('dashboard/slider', 'SliderController');
     Route::resource('dashboard/category', 'CategoryController');
     Route::resource('dashboard/item', 'ItemController');
+    
     Route::get('dashboard/reservation', 'ReservationController@index')->name('reservation.index');
     Route::post('dashboard/reservation/{id}', 'ReservationController@status')->name('reservation.status');
     Route::delete('dashboard/reservation/{id}', 'ReservationController@destroy')->name('reservation.destroy');
+    
+    Route::get('dashboard/contact', 'ContactController@index')->name('contact.index');
+    Route::get('dashboard/contact/{id}', 'ContactController@show')->name('contact.show');
+    Route::delete('dashboard/contact/{id}', 'ContactController@destroy')->name('contact.destroy');
 });

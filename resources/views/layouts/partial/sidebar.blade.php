@@ -1,8 +1,8 @@
-<div class="sidebar" data-color="purple" data-image="../assets/img/sidebar-1.jpg">
+<div class="sidebar" data-color="purple" data-image="{{asset('backend/img/sidebar-1.jpg')}}">
               
     <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text">
-            Creative Tim
+        <a href="{{ route('dashboard.admin')}}">
+            <h4>Mama Itunu Kitchen</h4>
         </a>
     </div>
     <div class="sidebar-wrapper">
@@ -35,6 +35,12 @@
                 <a href="{{ route('reservation.index') }}">
                     <i class="material-icons">chrome_reader_mode</i>
                     <p>Reservations</p>
+                </a>
+            </li>
+            <li class="{{Request::is('dashboard/contact*') ? 'active': ''}}">
+                <a href="{{ route('contact.index') }}">
+                    <i class="material-icons">message</i>
+                    <p>Contacts Message</p>
                 </a>
             </li>
             <li class="active-pro">

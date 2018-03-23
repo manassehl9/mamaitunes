@@ -15,7 +15,7 @@
                 @include('layouts.partial.msg')
                 <div class="card">
                     <div class="card-header" data-background-color="purple">
-                        <h4 class="title">Add New Slider</h4>
+                        <h4 class="title">Add New Category</h4>
                     </div>
                     <div class="card-content">
                         <form method="POST" action="{{ route('category.store') }} " enctype="multipart/form-data">
